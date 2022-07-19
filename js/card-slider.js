@@ -1,6 +1,6 @@
 const cards = document.querySelectorAll(".cards__card");
 const cardsWrapper = document.querySelector(".cards");
-document.querySelector("audio").volume = 0.05;
+document.querySelector(".wow-audio").volume = 0.05;
 
 cards.forEach((card, index) => {
 	card.addEventListener("click", function (e) {
