@@ -2,8 +2,6 @@ const cards = document.querySelectorAll(".cards__card");
 const cardsWrapper = document.querySelector(".cards");
 const audioWow = document.querySelector(".wow-audio");
 
-audioWow.volume = 0.05;
-
 // cards logic, bg change
 cards.forEach((card, index) => {
 	card.addEventListener("click", function (e) {
@@ -29,4 +27,9 @@ const bodyBg = (index) => {
 window.addEventListener("scroll", function (e) {
 	if (cardsWrapper.clientHeight - this.scrollY < 200) audioWow.classList.add("hide");
 	else audioWow.classList.remove("hide");
+});
+
+// after load
+document.addEventListener("load", function (e) {
+	audioWow.volume = 0.05;
 });
