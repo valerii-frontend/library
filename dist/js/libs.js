@@ -3,6 +3,7 @@ const cardsWrapper = document.querySelector(".cards");
 const audioWow = document.querySelector(".wow-audio");
 const modalCards = document.querySelector(`.modal[data-modal='cards']`);
 const modalCardsBody = modalCards.querySelector(`.modal[data-modal='cards'] .modal__body`);
+const modalCardsOpenBtn = document.querySelector(`.btn[data-open='cards']`);
 
 audioWow.volume = 0.05;
 // cards logic, bg change
@@ -35,4 +36,5 @@ modalCardsBody.addEventListener("scroll", function (e) {
 modalCards.addEventListener("click", function (e) {
 	if (e.target.classList.contains("modal__close")) audioWow.pause();
 });
+modalCardsOpenBtn.addEventListener("click", () => audioWow.play());
 ;
