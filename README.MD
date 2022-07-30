@@ -20,10 +20,11 @@
 3. CSS transitions / animations;
 
 
-## 🔗 Preview
-
+## 🔗 Link for 
+[Github pages live preview](https://valerii-frontend.github.io/portfolio/dist/)
 
 
 
 ## 👤 Author
+[My linkedIn page](https://www.linkedin.com/in/valerii-lozghachov/)
 
