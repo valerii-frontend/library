@@ -1,0 +1,27 @@
+.header {
+	background-color: $dark;
+	padding: 1rem 0;
+	// .header__row
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	// .header__nav
+	&__nav {
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		li {
+			margin-right: 1rem;
+		}
+		a {
+			color: $light;
+		}
+	}
+	// .header__btn
+	&__btn {
+	}
+}
