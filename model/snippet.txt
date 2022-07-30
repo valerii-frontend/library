@@ -1,0 +1,36 @@
+<model-viewer bounds="tight" enable-pan src="logos.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="0.66" environment-image="music_hall_01_1k.hdr" exposure="0.52" auto-rotate camera-orbit="1119deg 22.5deg auto">
+    <button class="Hotspot" slot="hotspot-3" data-position="3.0857780634271172m 1.589238281147903m -1.0513897598795765m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">JavaScript ES6+</div>
+    </button><button class="Hotspot" slot="hotspot-4" data-position="8.17959451726802m 1.2323684912063144m -1.179545569513381m" data-normal="0.026292675788997816m 0.9996379799039216m 0.00571002044318309m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">SASS Preprocessor</div>
+    </button><button class="Hotspot" slot="hotspot-5" data-position="8.565581827072451m 1.1563561583480415m -3.1771200442942473m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">HTML5</div>
+    </button><button class="Hotspot" slot="hotspot-6" data-position="7.743023320642996m -0.0292221743806913m -3.2764125402558233m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Microsoft Visual Studio Code IDE</div>
+    </button><button class="Hotspot" slot="hotspot-7" data-position="6.54298738757219m 0.5497131064308478m -3.253005904197395m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">GitLab</div>
+    </button><button class="Hotspot" slot="hotspot-8" data-position="5.556766285602445m 1.062883220987883m -3.160082135390902m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">JetBrains PHP Storm IDE</div>
+    </button><button class="Hotspot" slot="hotspot-9" data-position="4.521789562459619m 0.6342789616093144m -3.0883265138173788m" data-normal="-0.009333794639836952m 0.9999564391900386m 0m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Git control version </div>
+    </button><button class="Hotspot" slot="hotspot-10" data-position="3.2072764922405783m 0.8813665703767984m -3.1226229767514297m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">TypeScript</div>
+    </button><button class="Hotspot" slot="hotspot-11" data-position="5.400240861466925m -0.09296233579516411m -1.104819462221159m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Gulp task manager</div>
+    </button><button class="Hotspot" slot="hotspot-14" data-position="6.554253653335115m 0.5058560219421313m -1.139688192046845m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Bootstrap 5+ CSS Framework </div>
+    </button><button class="Hotspot" slot="hotspot-15" data-position="7.159576181363311m 0.07582444105828767m -2.0003810090795344m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">CSS3 / Animation / Flex / Grid</div>
+    </button><button class="Hotspot" slot="hotspot-16" data-position="4.371213543776249m 0.14531767697139142m -1.145372980886017m" data-normal="0.6613630107611581m -0.13914206849945457m 0.7370471170628303m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">React JS</div>
+    </button>
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div>
+</model-viewer>
