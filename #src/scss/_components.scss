@@ -1,0 +1,105 @@
+.btn {
+	display: inline-flex;
+	place-items: center;
+
+	position: relative;
+	overflow: hidden;
+
+	padding: 0.5em 1em;
+
+	background-color: $primary;
+	color: $light;
+	font-size: 18px;
+	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	cursor: pointer;
+
+	&:hover,
+	&:hover span,
+	&:hover strong,
+	strong,
+	span {
+		transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+	strong {
+		position: absolute;
+		transform: translateX(-150%);
+	}
+	&:hover {
+		background-color: $primary-hover;
+		box-shadow: 0 5px 0 0 $light;
+		transition: 0.3s;
+		strong {
+			transform: translateX(0%);
+		}
+		span {
+			transform: translateX(150%);
+		}
+	}
+	&:active {
+		transform: translateY(5px);
+		box-shadow: none;
+		transition: 0.3s;
+	}
+}
+.logo {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 2rem;
+	color: $light;
+	overflow: hidden;
+	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	cursor: pointer;
+	@media (max-width: 575.98px) {
+		font-size: 1.5rem;
+	}
+	span::first-letter {
+		color: $primary;
+	}
+	strong::first-letter {
+		color: $light;
+	}
+	&:hover,
+	&:hover span,
+	&:hover strong,
+	strong,
+	span {
+		transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+	strong {
+		position: absolute;
+		color: $primary-hover;
+		left: 0;
+		transform: translateY(-150%);
+	}
+	&:hover {
+		transition: 0.3s;
+		strong {
+			transform: translateY(0%);
+		}
+		span {
+			transform: translateY(150%);
+		}
+	}
+}
+.link {
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -5px;
+		left: 50%;
+		width: 0%;
+		height: 1px;
+		background-color: $light;
+		transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+	&:hover:after {
+		width: 100%;
+		left: 0;
+		transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+}

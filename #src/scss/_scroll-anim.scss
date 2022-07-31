@@ -1,0 +1,11 @@
+._scroll {
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	transform: translateY(-100px);
+	transition: ease-in-out 0.5s;
+}
+
+._anim {
+	transition: ease-in-out 0.5s;
+}

@@ -1,0 +1,36 @@
+.header {
+	background-color: $dark;
+	padding: 1rem 0;
+	// .header__row
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	// .header__nav
+	&__nav {
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		li {
+			margin-right: 1rem;
+		}
+		a {
+			color: $light;
+		}
+	}
+	// .header__btn
+	&__btn .btn {
+		@media (max-width: 389.98px) {
+			font-size: 0;
+			padding: 0.5rem 1rem;
+			&:after {
+				content: "@";
+				font-weight: bold;
+				font-size: 1.25rem;
+			}
+		}
+	}
+}
