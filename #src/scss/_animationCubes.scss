@@ -1,0 +1,194 @@
+$cube-size: 100px;
+.cubes {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: lighten($dark, 25%);
+}
+.animation-wrapper {
+	width: calc($cube-size * 6);
+	min-height: calc($cube-size * 6);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+}
+.border {
+	width: calc(2 * $cube-size);
+	height: calc(2 * $cube-size);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -100%);
+	border: 0.5rem double $light;
+	opacity: 0;
+	animation: opacity 1s ease-in 4s 1 forwards;
+	background: rgba($primary, 0.2);
+}
+.text {
+	max-width: 80%;
+	margin: 0 auto;
+	height: 100%;
+	margin-bottom: 5rem;
+	overflow: hidden;
+	span {
+		display: flex;
+		max-width: 100%;
+		font-size: 64px;
+		font-weight: 900;
+		animation: text 1s ease-out 2s 1 forwards;
+		opacity: 0;
+		color: $light;
+		flex-direction: column;
+		text-align: center;
+		&:after {
+			content: "«pure CSS animation»";
+			font-weight: 300;
+			font-style: italic;
+			font-size: 18px;
+			margin-top: 1rem;
+			color: $dark;
+			animation: text 1s ease-out 5s 1 forwards;
+			opacity: 0;
+		}
+	}
+}
+.box {
+	width: $cube-size;
+	height: $cube-size;
+	perspective: calc($cube-size * 4);
+	position: absolute;
+	z-index: 5;
+	&-top {
+		top: 10%;
+		left: calc(50% - $cube-size / 2);
+		opacity: 0;
+		animation: box-top 1s ease-out 3s 1 forwards;
+		.cube {
+			animation: rotate 12s linear 5.5s infinite;
+		}
+	}
+	&-right {
+		top: 40%;
+		left: calc(50% + $cube-size / 1.75);
+		opacity: 0;
+		animation: box-right 1s ease-out 2.8s 1 forwards;
+		.cube {
+			animation: rotate 10s linear 5.7s infinite;
+		}
+	}
+	&-left {
+		top: 40%;
+		right: calc(50% + $cube-size / 1.75);
+		opacity: 0;
+		animation: box-left 1s ease-out 2.6s 1 forwards;
+		.cube {
+			animation: rotate 8s linear 5.3s infinite;
+		}
+	}
+}
+
+.cube {
+	width: $cube-size;
+	transform-style: preserve-3d;
+	transform: rotateX(-45deg) rotateY(45deg);
+}
+
+.side {
+	position: absolute;
+	width: $cube-size;
+	height: $cube-size;
+	opacity: 0.85;
+}
+.back,
+.front {
+	background: $light;
+}
+.front {
+	transform: translateZ(calc($cube-size / 2));
+}
+.back {
+	transform: rotateY(180deg) translateZ(calc($cube-size / 2));
+}
+.left,
+.right {
+	background: $dark;
+}
+.left {
+	transform: rotateY(-90deg) translateX(calc($cube-size * -1 / 2));
+	transform-origin: left;
+}
+.right {
+	transform: rotateY(90deg) translateX(calc($cube-size / 2));
+	transform-origin: right;
+}
+.top,
+.bottom {
+	background: $primary;
+}
+.top {
+	transform: rotateX(-90deg) translateY(calc($cube-size * -1 / 2));
+	transform-origin: top;
+}
+.bottom {
+	transform: rotateX(90deg) translateY(calc($cube-size / 2));
+	transform-origin: bottom;
+}
+@keyframes rotate {
+	0% {
+		transform: rotateX(-45deg) rotateY(45deg);
+	}
+	100% {
+		transform: rotateX(-45deg) rotateY(405deg);
+	}
+}
+@keyframes text {
+	from {
+		opacity: 0;
+		transform: translateY(50%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes box-top {
+	from {
+		opacity: 0;
+		transform: translateY(-50%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes box-left {
+	from {
+		opacity: 0;
+		transform: translateX(-50%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes box-right {
+	from {
+		opacity: 0;
+		transform: translateX(50%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

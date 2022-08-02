@@ -6,10 +6,58 @@ $light: #fbfbfd;
 @import "null";
 @import "mixins";
 @import "cardsAccordion";
+@import "animationCubes";
 @import "components";
 @import "modal";
 @import "header";
 .page {
 	@include adaptiv-value("padding-top", 50, 25, 1);
 	background: lighten($dark, 65%);
+}
+
+.works {
+	// .works__list
+	&__list {
+		li {
+			counter-increment: works-list;
+			list-style: decimal-leading-zero;
+			@include adaptiv-font(18, 16, 1);
+			display: flex;
+			align-items: center;
+			margin-bottom: 0.5rem;
+			span {
+				flex: 1 1 auto;
+				margin-right: 1rem;
+			}
+			.btn {
+				flex: 0 0 100px;
+				text-align: center;
+			}
+			@media (min-width: 991.98px) {
+				transition: 0.3s;
+				&:hover {
+					transition: 0.3s;
+					&::before {
+						background-color: $light;
+						transition: 0.3s;
+					}
+				}
+			}
+			&:before {
+				content: "";
+				max-width: 16px;
+				height: 16px;
+				background-color: $primary;
+				border-radius: 50%;
+				flex: 0 0 16px;
+				margin-right: 16px;
+				border: 2px solid $primary;
+				transition: 0.3s;
+			}
+		}
+	}
+}
+.btn {
+}
+.btn-open {
 }

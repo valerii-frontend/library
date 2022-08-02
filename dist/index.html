@@ -31,7 +31,15 @@
 </header>
  <main class="page">
 	<div class="page__container _container">
-		<button class="btn btn-open" data-open="cards">Open cards</button>
+		<section class="works">
+			<h2 class="title works__title">Small projects library</h2>
+			<ul class="works__list">
+				<li>
+					<span>Custom slider/accordion concept </span><button class="btn btn-open" data-open="cards">Preview</button>
+				</li>
+				<li><span>Animations with pure CSS</span><button class="btn btn-open" data-open="cubes">Preview</button></li>
+			</ul>
+		</section>
 	</div>
 	<!-- /page__container _container -->
 </main>
@@ -83,6 +91,45 @@
 			</div>
 			<!-- /cards__container _container -->
 		</section>
+	</div>
+</div>
+ <div class="modal" data-modal="cubes">
+	<div class="modal__close" data-close="cubes">✖</div>
+	<div class="modal__body cubes">
+		<div class="animation-wrapper">
+			<div class="border"></div>
+			<div class="box box-top">
+				<div class="cube">
+					<div class="side front"></div>
+					<div class="side back"></div>
+					<div class="side left"></div>
+					<div class="side right"></div>
+					<div class="side top"></div>
+					<div class="side bottom"></div>
+				</div>
+			</div>
+			<div class="box box-right">
+				<div class="cube">
+					<div class="side front"></div>
+					<div class="side back"></div>
+					<div class="side left"></div>
+					<div class="side right"></div>
+					<div class="side top"></div>
+					<div class="side bottom"></div>
+				</div>
+			</div>
+			<div class="box box-left">
+				<div class="cube">
+					<div class="side front"></div>
+					<div class="side back"></div>
+					<div class="side left"></div>
+					<div class="side right"></div>
+					<div class="side top"></div>
+					<div class="side bottom"></div>
+				</div>
+			</div>
+			<div class="text"><span>Cubes</span></div>
+		</div>
 	</div>
 </div>
 
