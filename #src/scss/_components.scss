@@ -56,11 +56,43 @@
 	@media (max-width: 575.98px) {
 		font-size: 1.5rem;
 	}
-	span::first-letter {
-		color: $primary;
+	span {
+		&:after,
+		&:before {
+			font-size: 1.2em;
+			color: yellow;
+			font-weight: normal;
+		}
+		&:after {
+			content: " }";
+		}
+		&:before {
+			content: "{ ";
+		}
+		b {
+			color: $primary;
+		}
 	}
-	strong::first-letter {
-		color: $light;
+	strong {
+		&:after,
+		&:before {
+			font-size: 1.2em;
+			color: plum;
+			font-weight: normal;
+		}
+		&:after {
+			content: " ]";
+		}
+		&:before {
+			content: "[ ";
+		}
+		b {
+			color: $light;
+		}
+		position: absolute;
+		color: $primary-hover;
+		left: 0;
+		transform: translateY(-150%);
 	}
 	&:hover,
 	&:hover span,
@@ -69,12 +101,7 @@
 	span {
 		transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	}
-	strong {
-		position: absolute;
-		color: $primary-hover;
-		left: 0;
-		transform: translateY(-150%);
-	}
+
 	&:hover {
 		transition: 0.3s;
 		strong {
