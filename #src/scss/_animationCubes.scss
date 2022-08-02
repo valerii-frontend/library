@@ -5,7 +5,7 @@ $cube-size: 100px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: lighten($dark, 25%);
+	background: $dark-grey;
 }
 .animation-wrapper {
 	width: calc($cube-size * 6);
@@ -94,6 +94,10 @@ $cube-size: 100px;
 	width: $cube-size;
 	transform-style: preserve-3d;
 	transform: rotateX(-45deg) rotateY(45deg);
+	&:hover {
+		animation-play-state: paused;
+		cursor: pointer;
+	}
 }
 
 .side {
@@ -101,6 +105,11 @@ $cube-size: 100px;
 	width: $cube-size;
 	height: $cube-size;
 	opacity: 0.85;
+	transition: 0.3s;
+	&:hover {
+		opacity: 1;
+		transition: 0.3s;
+	}
 }
 .back,
 .front {
