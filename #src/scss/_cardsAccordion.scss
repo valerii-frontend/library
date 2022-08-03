@@ -1,4 +1,5 @@
 .cards {
+	position: relative;
 	font-family: Roboto;
 	display: flex;
 	align-items: center;
@@ -8,15 +9,21 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-image: url("../img/cards/load0.jpg");
-	background-attachment: fixed;
 	padding: 50px 0;
-	min-height: 90vh;
+	height: 100%;
+	@media (max-width: 575.98px) {
+		align-items: stretch;
+	}
 	// .cards__container
 	&__container {
 		display: flex;
 		width: 90vw;
 		@media (max-width: 767.98px) {
 			flex-direction: column;
+			width: 90%;
+		}
+
+		@media (max-width: 389.98px) {
 			width: auto;
 		}
 	}
@@ -36,6 +43,9 @@
 		position: relative;
 		display: flex;
 		align-items: flex-end;
+		@media (max-width: 991.98px) {
+			flex: 0 0 7%;
+		}
 		@media (max-width: 767.98px) {
 			margin: 0;
 			height: 60px;
@@ -57,6 +67,9 @@
 			filter: grayscale(0);
 			transition: 1s;
 			flex: 5;
+			@media (max-width: 991.98px) {
+				flex: 0 0 40%;
+			}
 			@media (max-width: 767.98px) {
 				height: 300px;
 				transition: 1s;
@@ -107,7 +120,7 @@
 	}
 }
 .wow-audio {
-	position: sticky;
+	position: fixed;
 	z-index: 10;
 	top: 10px;
 	left: 10px;

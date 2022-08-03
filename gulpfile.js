@@ -5,12 +5,11 @@ const autoprefixer = require("gulp-autoprefixer");
 const scss = require("gulp-sass")(require("sass"));
 const group_media = require("gulp-group-css-media-queries");
 const del = require("del");
-const concat = require("gulp-concat");
+const rename = require("gulp-rename");
 const imagemin = require("gulp-imagemin");
 const uglify = require("gulp-uglify-es").default;
 const fileinclude = require("gulp-file-include");
 const clean_css = require("gulp-clean-css");
-// const project_name = require("path").basename(__dirname);
 const project_name = "dist";
 const src_folder = "#src";
 
@@ -27,7 +26,7 @@ const path = {
 	src: {
 		favicon: src_folder + "/img/favicon.{jpg,png,svg,gif,ico,webp}",
 		html: [src_folder + "/*.html", "!" + src_folder + "/_*.html"],
-		js: [src_folder + "/js/main.js", src_folder + "/js/libs.js"],
+		js: [src_folder + "/js/*.js"],
 		css: [src_folder + "/scss/*.scss", "!" + src_folder + "/scss/_*.scss"],
 		images: [src_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}", "!**/favicon.*"],
 		fonts: src_folder + "/fonts/**/*.*",
@@ -60,19 +59,22 @@ function html() {
 }
 function css() {
 	return src(path.src.css)
-		.pipe(scss({ outputStyle: "expanded" }))
-		.pipe(autoprefixer({ overrideBrowserslist: ["last 10 version"] }))
 		.pipe(
 			autoprefixer({
 				grid: true,
-				overrideBrowserslist: ["last 10 versions"],
+				overrideBrowserslist: ["last 5 versions"],
 				cascade: true,
 			})
 		)
+		.pipe(scss({ outputStyle: "expanded" }))
 		.pipe(group_media())
 		.pipe(dest(path.build.css))
 		.pipe(scss({ outputStyle: "compressed" }))
-		.pipe(concat("style.min.css"))
+		.pipe(
+			rename({
+				suffix: ".min",
+			})
+		)
 		.pipe(dest(path.build.css))
 		.pipe(browsersync.stream());
 }
@@ -81,7 +83,11 @@ function js() {
 		.pipe(fileinclude())
 		.pipe(gulp.dest(path.build.js))
 		.pipe(uglify(/* options */))
-		.pipe(concat("main.min.js"))
+		.pipe(
+			rename({
+				suffix: ".min",
+			})
+		)
 		.pipe(dest(path.build.js))
 		.pipe(browsersync.stream());
 }
