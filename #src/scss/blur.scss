@@ -1,0 +1,32 @@
+@import "vars";
+@import url("https://fonts.googleapis.com/css?family=Roboto:regular,700,900&display=swap");
+@import "null";
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $light;
+	font-family: monospace;
+	overflow: hidden;
+	height: 100%;
+}
+
+.background {
+	background: url("https://source.unsplash.com/random") no-repeat center center/cover;
+	position: absolute;
+	top: -30px;
+	left: -30px;
+	width: calc(100vw + 60px);
+	height: calc(100vh + 60px);
+	z-index: 0;
+	filter: blur(0px);
+}
+.loading-progress {
+	position: relative;
+	font-size: 10vw;
+	color: $light;
+	text-shadow: 0 0 5px $dark;
+	font-weight: 700;
+	z-index: 5;
+}
