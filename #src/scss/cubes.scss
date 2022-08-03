@@ -1,4 +1,13 @@
 $cube-size: 100px;
+@import "vars";
+@import url("https://fonts.googleapis.com/css?family=Roboto:regular,700,900&display=swap");
+@import "null";
+body {
+	background-color: $dark-grey;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 .cubes {
 	width: 100%;
 	height: 100%;

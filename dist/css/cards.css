@@ -43,7 +43,6 @@ body {
   font-size: 14px;
   line-height: 1;
   height: 100%;
-  background-color: #fbfbfd;
   font-family: Roboto;
 }
 
@@ -102,7 +101,7 @@ textarea {
   align-items: center;
   justify-content: center;
   margin: 0;
-  transition: background 2s;
+  transition: all 3s ease-in-out;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("../img/cards/load0.jpg");
