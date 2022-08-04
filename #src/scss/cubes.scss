@@ -22,7 +22,7 @@ body {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	justify-content: end;
+	justify-content: flex-end;
 }
 .border {
 	width: calc(2 * $cube-size);
