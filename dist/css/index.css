@@ -161,10 +161,25 @@ textarea {
   -ms-transform: scale(0.7);
   transform: scale(0.7);
   margin-top: -10vh;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
   opacity: 0;
+  -webkit-transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  -o-transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.frame.full {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100vw;
+  margin-top: 0;
+  -webkit-transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  -o-transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .frame iframe {
@@ -222,9 +237,18 @@ iframe.mobile {
 }
 
 .mobile-toggle {
-  position: absolute;
   top: 0;
   left: 0;
+}
+
+.fullscreen-toggle {
+  top: 0;
+  right: 0;
+}
+
+.mobile-toggle,
+.fullscreen-toggle {
+  position: absolute;
   z-index: 10;
   background-color: #fbfbfd;
   padding: 0.5rem;
@@ -238,7 +262,9 @@ iframe.mobile {
 }
 
 .mobile-toggle input,
-.mobile-toggle label {
+.mobile-toggle label,
+.fullscreen-toggle input,
+.fullscreen-toggle label {
   cursor: pointer;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;

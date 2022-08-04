@@ -74,8 +74,18 @@
 	background: linear-gradient(90deg, $dark-grey, $grey);
 	transform: scale(0.7);
 	margin-top: -10vh;
-	transition: 0.5s;
 	opacity: 0;
+	transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	&.full {
+		transform: scale(1);
+		position: fixed;
+		top: 0;
+		left: 0;
+		min-height: 100vh;
+		width: 100vw;
+		margin-top: 0;
+		transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	}
 	iframe {
 		position: absolute;
 		top: 0;
@@ -107,9 +117,16 @@ iframe.mobile {
 	transition: 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .mobile-toggle {
-	position: absolute;
 	top: 0;
 	left: 0;
+}
+.fullscreen-toggle {
+	top: 0;
+	right: 0;
+}
+.mobile-toggle,
+.fullscreen-toggle {
+	position: absolute;
 	z-index: 10;
 	background-color: $light;
 	padding: 0.5rem;

@@ -1,11 +1,16 @@
 const links = document.querySelectorAll("a");
 const frame = document.querySelector(".frame");
 const src = frame.querySelector("iframe");
-const toggle = document.querySelector("#toggle");
+const mobileToggle = document.querySelector("#toggle");
+const fullScreentoggle = document.querySelector("#full");
 
-toggle.addEventListener("change", function (e) {
-	if (toggle.checked) src.classList.add("mobile");
+mobileToggle.addEventListener("change", function (e) {
+	if (mobileToggle.checked) src.classList.add("mobile");
 	else src.classList.remove("mobile");
+});
+fullScreentoggle.addEventListener("change", function (e) {
+	if (fullScreentoggle.checked) frame.classList.add("full");
+	else frame.classList.remove("full");
 });
 
 links.forEach((a) => {
