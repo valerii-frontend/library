@@ -97,7 +97,8 @@ textarea {
 .works {
   padding-top: 50px;
   color: #333333;
-  overflow: hidden;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .works__title {
@@ -152,14 +153,14 @@ textarea {
 .frame {
   -webkit-box-shadow: 0 0 5px 0 #0071e3;
   box-shadow: 0 0 5px 0 #0071e3;
-  width: 100vw;
-  min-height: 100vh;
+  min-height: 85vh;
   background: -webkit-gradient(linear, left top, right top, from(gray), to(#d9d9d9));
   background: -o-linear-gradient(left, gray, #d9d9d9);
   background: linear-gradient(90deg, gray, #d9d9d9);
-  -webkit-transform: scale(0.75) translate(-25%, -15%);
-  -ms-transform: scale(0.75) translate(-25%, -15%);
-  transform: scale(0.75) translate(-25%, -15%);
+  -webkit-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+  margin-top: -10vh;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -221,6 +222,12 @@ iframe.mobile {
 }
 
 .mobile-toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #fbfbfd;
+  padding: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
