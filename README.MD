@@ -24,3 +24,5 @@
 ## 👤 Author
 
 [My linkedIn page](https://www.linkedin.com/in/valerii-lozghachov/)
+
+---
