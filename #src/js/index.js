@@ -10,11 +10,13 @@ toggle.addEventListener("change", function (e) {
 
 links.forEach((a) => {
 	a.addEventListener("click", function (e) {
-		frame.classList.add("hide");
 		e.preventDefault();
-		src.setAttribute("src", a.getAttribute("href"));
+		frame.style.opacity = 1;
+		src.classList.remove("show");
+		src.style.opacity = 0;
 		setTimeout(() => {
-			frame.classList.remove("hide");
-		}, 500);
+			src.classList.add("show");
+		}, 100);
+		src.setAttribute("src", a.getAttribute("href"));
 	});
 });

@@ -74,6 +74,7 @@
 	background: linear-gradient(90deg, $dark-grey, $grey);
 	transform: scale(0.75) translate(-25%, -15%);
 	transition: 0.5s;
+	opacity: 0;
 	iframe {
 		position: absolute;
 		top: 0;
@@ -82,13 +83,21 @@
 		height: 100%;
 		box-shadow: 0 0 5px 0 $dark;
 		transition: 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+		&.show {
+			opacity: 0;
+			animation: opacity 1s ease 0.3s 1 forwards;
+		}
 	}
 }
-
-.hide {
-	opacity: 0;
-	visibility: visible;
-	transition: 0.5s;
+@keyframes opacity {
+	from {
+		opacity: 0;
+		visibility: hidden;
+	}
+	to {
+		opacity: 1;
+		visibility: visible;
+	}
 }
 iframe.mobile {
 	width: 390px;

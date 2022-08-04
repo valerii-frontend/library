@@ -163,6 +163,7 @@ textarea {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  opacity: 0;
 }
 
 .frame iframe {
@@ -178,12 +179,34 @@ textarea {
   transition: 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
-.hide {
+.frame iframe.show {
   opacity: 0;
-  visibility: visible;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-animation: opacity 1s ease 0.3s 1 forwards;
+  animation: opacity 1s ease 0.3s 1 forwards;
+}
+
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 iframe.mobile {
