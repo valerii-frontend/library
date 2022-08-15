@@ -1,4 +1,4 @@
-# Portfolio page
+# Library with different small tasks and projects
 
 ## 🛠 Tools
 
