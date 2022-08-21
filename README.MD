@@ -19,7 +19,7 @@
 
 ## 🔗 Link for
 
-[Github pages live preview](https://valerii-frontend.github.io/portfolio/dist/)
+[Github pages live preview](https://valerii-frontend.github.io/library/dist/)
 
 ## 👤 Author
 
