@@ -66,8 +66,9 @@ body {
 }
 
 .block {
-  background-image: -o-linear-gradient(15deg, darkorange 0%, lightpink 100%);
-  background-image: linear-gradient(75deg, darkorange 0%, lightpink 100%);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,13 +102,6 @@ body {
   -webkit-transform: translateX(-400%);
   -ms-transform: translateX(-400%);
   transform: translateX(-400%);
-  background-image: -o-linear-gradient(65deg, orange 0%, darkorange 100%);
-  background-image: linear-gradient(25deg, orange 0%, darkorange 100%);
-}
-
-.block:nth-of-type(6n + 2) {
-  background-image: -o-linear-gradient(40deg, darksalmon 0%, lightcoral 75%);
-  background-image: linear-gradient(50deg, darksalmon 0%, lightcoral 75%);
 }
 
 .block.show {

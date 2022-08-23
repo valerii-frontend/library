@@ -1,0 +1,111 @@
+@import "vars";
+@import "null";
+@import url("https://fonts.googleapis.com/css?family=Roboto:regular,700&display=swap");
+
+:root {
+	--line-border-fill: rgb(228, 91, 0);
+	--line-border-empty: rgb(219, 219, 219);
+}
+body {
+	background-color: #c9c9c9;
+	font-family: "Roboto";
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+}
+.steps {
+	// .steps__container
+	&__container {
+		text-align: center;
+	}
+	// .steps__wrapper
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		margin-bottom: 30px;
+		max-width: 100%;
+		width: 500px;
+		&::before {
+			content: "";
+			background-color: var(--line-border-empty);
+			position: absolute;
+			top: calc(50% - 2px);
+			left: 0;
+			height: 4px;
+			width: 100%;
+			z-index: 1;
+			transition: 0.4s ease;
+		}
+	}
+	// .steps__progress
+	&__progress {
+		background-color: var(--line-border-fill);
+		position: absolute;
+		top: calc(50% - 2px);
+		left: 0;
+		height: 4px;
+		width: 0%;
+		z-index: 1;
+		transition: 0.4s ease;
+	}
+	// .steps__circle
+	&__circle {
+		position: relative;
+		z-index: 2;
+		background-color: white;
+		color: #4f4f4f;
+		border-radius: 50%;
+		height: 60px;
+		width: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 3px solid var(--line-border-empty);
+		transition: 0.4s ease;
+		// .steps__circle_active
+		&_active {
+			border-color: var(--line-border-fill);
+		}
+	}
+	// .steps__btn
+	&__btn {
+		font-size: 20px;
+		background-color: var(--line-border-fill);
+		border: 0;
+		border-radius: 6px;
+		cursor: pointer;
+		font-family: inherit;
+		padding: 8px 32px;
+		margin: 5px;
+		color: white;
+		transition: 0.3s;
+		&:active {
+			transform: scale(0.95);
+			transition: 0.1s;
+		}
+		&:focus {
+			outline: 0;
+		}
+		&:disabled {
+			background-color: var(--line-border-empty);
+			cursor: no-drop;
+		}
+	}
+}
+
+@media (max-width: 575.98px) {
+	.steps {
+		&__wrapper {
+			width: 300px;
+		}
+		&__circle {
+			width: 40px;
+			height: 40px;
+		}
+	}
+}
