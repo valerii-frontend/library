@@ -2,6 +2,9 @@
 @import "null";
 @import "mixins";
 
+:root {
+	--size: 100px;
+}
 body {
 	margin: 0;
 	padding: 0;
@@ -15,8 +18,8 @@ body {
 }
 .loader {
 	position: relative;
-	height: 160px;
-	width: 160px;
+	height: calc(var(--size) * 2);
+	width: calc(var(--size) * 2);
 	&::after,
 	&::before {
 		content: "";
@@ -25,7 +28,7 @@ body {
 		height: 0;
 		left: 0;
 		top: 0;
-		border: 80px solid transparent;
+		border: var(--size) solid transparent;
 		border-bottom-color: gold;
 		animation: rotateOne 2s linear infinite 0.5s;
 	}
@@ -67,7 +70,7 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%);
-	margin-top: 150px;
+	margin-top: calc(var(--size) * 1.5);
 	color: gold;
 	font-size: 2rem;
 	text-transform: uppercase;
@@ -92,5 +95,15 @@ body {
 	to {
 		transform: scale(2);
 		opacity: 1;
+	}
+}
+
+@media (max-width: 575.98px) {
+	:root {
+		--size: 50px;
+	}
+	.text {
+		font-size: 1rem;
+		letter-spacing: 2px;
 	}
 }

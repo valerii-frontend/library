@@ -92,6 +92,10 @@ textarea {
   flex: 1 1 auto;
 }
 
+:root {
+  --size: 100px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -112,8 +116,8 @@ body {
 
 .loader {
   position: relative;
-  height: 160px;
-  width: 160px;
+  height: calc(var(--size) * 2);
+  width: calc(var(--size) * 2);
 }
 
 .loader::after,
@@ -124,7 +128,7 @@ body {
   height: 0;
   left: 0;
   top: 0;
-  border: 80px solid transparent;
+  border: var(--size) solid transparent;
   border-bottom-color: gold;
   -webkit-animation: rotateOne 2s linear infinite 0.5s;
   animation: rotateOne 2s linear infinite 0.5s;
@@ -214,7 +218,7 @@ body {
   -webkit-transform: translate(-50%);
   -ms-transform: translate(-50%);
   transform: translate(-50%);
-  margin-top: 150px;
+  margin-top: calc(var(--size) * 1.5);
   color: gold;
   font-size: 2rem;
   text-transform: uppercase;
@@ -331,5 +335,14 @@ body {
 @media (max-width: 575.98px) {
   ._container {
     max-width: 100%;
+  }
+
+  :root {
+    --size: 50px;
+  }
+
+  .text {
+    font-size: 1rem;
+    letter-spacing: 2px;
   }
 }
