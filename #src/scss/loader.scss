@@ -1,0 +1,96 @@
+@import "vars";
+@import "null";
+@import "mixins";
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: rgb(29, 29, 29);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	min-height: 100vh;
+	font-family: Arial;
+}
+.loader {
+	position: relative;
+	height: 160px;
+	width: 160px;
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		width: 0;
+		height: 0;
+		left: 0;
+		top: 0;
+		border: 80px solid transparent;
+		border-bottom-color: gold;
+		animation: rotateOne 2s linear infinite 0.5s;
+	}
+	&::before {
+		transform: rotate(90deg);
+		animation: rotateTwo 2s linear infinite;
+		border-bottom-color: rgb(255, 239, 148);
+	}
+}
+@keyframes rotateOne {
+	0%,
+	25% {
+		transform: rotate(0deg);
+	}
+	50%,
+	75% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotateTwo {
+	0%,
+	25% {
+		transform: rotate(90deg);
+	}
+	50%,
+	75% {
+		transform: rotate(270deg);
+	}
+	100% {
+		transform: rotate(450deg);
+	}
+}
+
+.text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%);
+	margin-top: 150px;
+	color: gold;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+.letter {
+	animation: textAnim 1100ms infinite alternate linear;
+	display: inline-block;
+	@for $i from 1 through 11 {
+		&:nth-child(#{$i}) {
+			animation-delay: ($i * 100ms);
+		}
+	}
+}
+
+@keyframes textAnim {
+	from,
+	70% {
+		transform: scale(1);
+		opacity: 0.3;
+	}
+	to {
+		transform: scale(2);
+		opacity: 1;
+	}
+}
